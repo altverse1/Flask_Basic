@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+    Update
+{% endblock title %}
+{% block body %}
+
+<div class="container my-3"> <!--my-3 means margin on y axis with 3 space-->
+    <h2>Update To-do</h2>
+    <form action="/update/{{todo.sno}}" method="POST">
+        <div class="mb-3">
+            <label for="title">To-do Title</label>
+            <input type="text" class="form-control" name="title" id="title" value="{{todo.title}}" aria-describedby="emailHelp"
+                placeholder="Todo Work By Today">
+        </div>
+        <div class="mb-3">
+            <label for="desc">To-Do Description</label>
+            <input type="text" class="form-control" name="desc" id="desc" value="{{todo.desc}}" placeholder="What is it about?">
+        </div>
+        <button type="submit" class="btn btn-dark btn-primary">Update</button>
+    </form>
+</div>
+
+{% endblock body %}
